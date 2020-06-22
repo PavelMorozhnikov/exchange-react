@@ -42,25 +42,48 @@
     margin: 0 0 73px 21px;
 }
 
-.pageBack {
-    background: #F6F6F5;
-    border-radius: 50px;
-    margin: 30px 0 0 90px;
-    align-items: center;
-    width: 250px;
-    height: 40px;
-    left: 170px;
-    top: 928px;
-    border: none;
-    cursor:pointer;
-
+.form {
+    display: flex; 
+    justify-content: space-between;
+ }
+ 
+.aztec {
+    margin-bottom: 15px;
 }
 
-.homePage {
+.form_input {
+    width: 330px;
+    height: 63px;
+    left: 365px;
+    top: 440px;
+    border: 2px solid #434F4D;
+    box-sizing: border-box;
+    border-radius: 10px;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
-    line-height: 25px;
-    color: #817D6C;
+    font-size: 30px;
+    line-height: 35px;
+    color: #434E4D;
+    border-radius: 10px;
+    padding-left: 38px;
+}
+
+.form_select {
+    width: 330px;
+    height: 63px;
+    left: 745px;
+    top: 440px;
+    border: 2px solid #434F4D;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-left: 50px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 35px;
+    color: #434E4D;
+    border-radius: 10px;
+    padding-left: 22px;
 }

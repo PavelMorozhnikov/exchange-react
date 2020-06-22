@@ -1,32 +1,43 @@
 import React from 'react'
 import styles from '../PageCalculator/PageCalculator.module.css'
-import { NavLink } from 'react-router-dom'
-import GetDataForm from './components/GetDataForm/GetDataForm'
 import Logo from '../common/Logo/Logo'
+import PageCalculatorSelect from './PageCalculatorSelect'
+import { reduxForm } from 'redux-form'
+
+const PageCalculator = (props) => {
+
+    const { currencyFirst, currencySecond, addNumderSecond, addNumderFirst } = props;
 
 
-const PageCalculator = () => {
+    const onSubmit = (formData) => {
+
+        if(!formData.countFirst){
+            addNumderSecond(formData.countSecond)
+        } else {
+            addNumderFirst(formData.countFirst)
+        }
+    }
+    
+
     return (
         <div className={styles.container}>
-             <div className={styles.mainContainer}>
-            <Logo />
-            <div className={styles.currenncyCalculator}>
-                <div className={styles.topCurrenncyCalculator}>
-                    <h1>Конвертер валют</h1>
-                </div>
-                <div>
-                    <GetDataForm />
-                    <GetDataForm />
+            <div className={styles.mainContainer}>
+                <Logo />
+                <div className={styles.currenncyCalculator}>
+                    <div className={styles.topCurrenncyCalculator}>
+                        <h1>Конвертер валют</h1>
+                    </div>
+                    <div>
+                        <PageCalculatorForm 
+                        onSubmit={onSubmit} 
+                        currencyOptions={currencyFirst} />
+                    </div>
                 </div>
             </div>
-            <NavLink to='/'>
-                <button className={styles.pageBack}>
-                    <p className={styles.homePage}>Главная страница</p>
-                </button>
-            </NavLink>
-        </div>
         </div>
     )
-}
 
+};
+
+const PageCalculatorForm = reduxForm({ form: 'PageCalculatorForm' })(PageCalculatorSelect)
 export default PageCalculator;

@@ -1,17 +1,19 @@
 import React from 'react';
 import './App.css';
 import Main from './Components/HomePage/Main'
-import PageCalculator from './Components/PageCalculator/PageCalculator'
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import PageCalculatorContainer from './Components/PageCalculator/PageCalculatorConteiner';
 
-function App() {
+
+
+const App = (props) => {
   return (
-    <BrowserRouter>
-      <div>
-          <Route exact path='/' component={Main} />
-          <Route path='/calculator' component={PageCalculator} />
-      </div>
-    </BrowserRouter>
+    <div>
+      <Route exact path='/'
+        render={() => <Main />} />
+      <Route path='/calculator'
+        render={() => <PageCalculatorContainer />} />
+    </div>
   );
 }
 

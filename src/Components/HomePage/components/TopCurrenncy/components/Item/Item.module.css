@@ -4,18 +4,23 @@
     align-items: center;
     justify-content: space-between;
 }
+
 .item {
     flex: 1;
     margin-right: 50px;
+    
+
 }
 
 .item:nth-last-child(1) {
     margin-right: 0px;
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis; /* Добавляем многоточие */
 }
 
 .itemContent {
     margin-bottom: 13px;
-    
 }
 
 .textWraper {
@@ -28,8 +33,8 @@
     text-align: center;
     color: #F6F6F5;
     padding: 14px 0px;
-    
 }
+
 .line {
     background: #666666;
     height: 3px;
@@ -44,7 +49,9 @@
     line-height: 35px;
     text-align: center;
     color: #000000;
+    
 }
+
 .itemContent {
     margin-bottom: 13px;
 }
